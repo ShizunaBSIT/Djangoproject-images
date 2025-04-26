@@ -4,4 +4,4 @@ python manage.py collectstatic --no-input
 python manage.py migrate
 
 # create superuser
-python manage.py create_superuser
+python management\commands\create_superuser.py
