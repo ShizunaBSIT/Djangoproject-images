@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if not User.objects.filter(username='admin').exists():
             User.objects.create_superuser(
-                username= os.environ.get('SUPER_USERNAME', 'admin'),
-                password= os.environ.get('SUPER_PASSWORD','complexpassword123')
+                username= os.getenv('SUPER_USERNAME', 'admin'),
+                password= os.getenv('SUPER_PASSWORD','complexpassword123')
             )
             print('Superuser has been created')
